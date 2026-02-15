@@ -3,171 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vocabulary Trainer Pro with Voice</title>
+    <title>ADVANCED SPEAKING LABS - Complete</title>
     <style>
-        :root {
-            --primary: #3b82f6;
-            --success: #22c55e;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --purple: #8b5cf6;
-            --dark-bg: #0f172a;
-            --card-bg: #1e293b;
-            --light-text: #f1f5f9;
-            --border-radius: 12px;
-        }
-        
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-            padding: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
             min-height: 100vh;
+            padding: 20px;
         }
-        
+
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
         }
-        
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: var(--border-radius);
+
+        .quote-banner {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 16px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            border: 1px solid #334155;
         }
-        
+
+        .quote-author {
+            margin-top: 10px;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+        }
+
         h1, h2, h3 {
             margin-bottom: 20px;
-            color: var(--light-text);
+            color: #f1f5f9;
         }
-        
+
         h1 {
             text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary);
+            color: #3b82f6;
         }
-        
-        .input-group {
-            margin-bottom: 15px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        input, select, button {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        
-        input, select {
-            background: #0f172a;
-            color: white;
-        }
-        
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
+
         button {
-            background: var(--primary);
+            background: #3b82f6;
             color: white;
             border: none;
-            cursor: pointer;
+            padding: 14px 20px;
+            border-radius: 16px;
+            font-size: 16px;
             font-weight: 600;
-            margin-top: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #2563eb;
         }
-        
+
         button:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
+            background: #2563eb;
+            transform: translateY(-2px);
         }
-        
-        button:active {
-            transform: translateY(0);
-        }
-        
+
         button.secondary {
             background: #475569;
+            border-color: #334155;
         }
-        
+
         button.success {
-            background: var(--success);
+            background: #22c55e;
+            border-color: #16a34a;
         }
-        
-        button.danger {
-            background: var(--danger);
-        }
-        
+
         button.warning {
-            background: var(--warning);
+            background: #f59e0b;
+            border-color: #d97706;
         }
-        
+
         button.voice {
-            background: var(--purple);
+            background: #8b5cf6;
+            border-color: #7c3aed;
         }
-        
+
+        button.danger {
+            background: #ef4444;
+            border-color: #dc2626;
+        }
+
         .btn-group {
             display: flex;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 20px 0;
         }
-        
+
         .btn-group button {
             flex: 1;
+            min-width: 120px;
         }
-        
-        .stats {
+
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0f172a;
+            border: 2px solid #334155;
+            border-radius: 16px;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
             margin: 20px 0;
         }
-        
+
         .stat-card {
             background: #0f172a;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 20px;
             text-align: center;
         }
-        
+
         .stat-card h3 {
-            font-size: 24px;
-            margin: 0;
-            color: var(--primary);
+            font-size: 32px;
+            color: #3b82f6;
+            margin-bottom: 5px;
         }
-        
-        .stat-card p {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-top: 5px;
+
+        .flashcard-container {
+            perspective: 2000px;
+            margin: 30px 0;
+            cursor: pointer;
         }
-        
-        .word-list {
-            max-height: 300px;
-            overflow-y: auto;
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            min-height: 300px;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            min-height: 300px;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            border-radius: 32px;
+            background: linear-gradient(145deg, #2d3748, #1e293b);
+            border: 2px solid #3b82f6;
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+            border-color: #22c55e;
+        }
+
+        .flashcard-word {
+            font-size: 56px;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .flashcard-meaning {
+            font-size: 48px;
+            font-weight: 700;
+            color: #22c55e;
+            margin-bottom: 20px;
+        }
+
+        .flashcard-example {
+            font-size: 18px;
+            color: #94a3b8;
+            font-style: italic;
+            max-width: 80%;
+        }
+
+        .results-card {
+            background: #0f172a;
+            border-radius: 20px;
+            padding: 25px;
             margin: 20px 0;
-            border: 1px solid #334155;
-            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #3b82f6;
         }
-        
+
+        .results-score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #22c55e;
+            margin: 15px 0;
+        }
+
+        .dictation-area {
+            background: #0f172a;
+            border-radius: 32px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 2px solid #334155;
+            min-height: 400px;
+        }
+
+        .dictation-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .big-voice-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .dictation-input {
+            font-size: 24px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid #3b82f6;
+            width: 80%;
+            margin: 20px auto;
+            color: white;
+        }
+
+        .dictation-feedback {
+            font-size: 20px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .dictation-feedback.correct {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 2px solid #22c55e;
+        }
+
+        .dictation-feedback.wrong {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 2px solid #ef4444;
+        }
+
+        .word-list {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #0f172a;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
         .word-item {
             display: flex;
             justify-content: space-between;
@@ -175,1179 +302,1079 @@
             padding: 15px;
             border-bottom: 1px solid #334155;
         }
-        
+
         .word-item:last-child {
             border-bottom: none;
         }
-        
-        .word-info {
-            flex: 1;
-        }
-        
-        .word-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .word-item .tag {
-            display: inline-block;
-            padding: 2px 8px;
-            background: #475569;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-left: 10px;
-        }
-        
-        .voice-controls {
-            display: flex;
-            gap: 10px;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-        
-        .voice-btn {
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: var(--purple);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 14px;
-        }
-        
-        .voice-btn:hover {
-            background: #7c3aed;
-        }
-        
-        .voice-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .voice-settings {
-            background: rgba(139, 92, 246, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 3px solid var(--purple);
-        }
-        
-        .feedback {
-            padding: 10px;
-            border-radius: 8px;
-            margin: 10px 0;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        .feedback.correct {
-            background: rgba(34, 197, 94, 0.2);
-            color: var(--success);
-            border: 1px solid var(--success);
-        }
-        
-        .feedback.wrong {
-            background: rgba(239, 68, 68, 0.2);
-            color: var(--danger);
-            border: 1px solid var(--danger);
-        }
-        
-        .progress-bar {
-            height: 10px;
-            background: #334155;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        .mistake-item {
-            padding: 10px;
-            background: rgba(239, 68, 68, 0.1);
-            border-left: 3px solid var(--danger);
-            margin: 10px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .history-item {
-            padding: 10px;
-            background: rgba(59, 130, 246, 0.1);
-            border-left: 3px solid var(--primary);
-            margin: 10px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
+
         .hidden {
             display: none !important;
         }
-        
+
         .flex-between {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
-        
-        .category-filter {
-            margin: 15px 0;
+
+        .badge {
+            background: #334155;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            margin-left: 8px;
         }
-        
-        .pronunciation-hint {
+
+        .badge.mastered {
+            background: #22c55e;
+            color: #0f172a;
+        }
+
+        .badge.mistake {
+            background: #ef4444;
+        }
+
+        .category-tag {
+            background: #475569;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .telegram-status {
+            background: #0088cc20;
+            border: 1px solid #0088cc;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 10px 0;
             font-size: 14px;
-            color: #94a3b8;
-            margin-top: 5px;
-            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        @media (max-width: 768px) {
-            .btn-group {
-                flex-direction: column;
+
+        .telegram-status.success {
+            background: #22c55e20;
+            border-color: #22c55e;
+        }
+
+        .telegram-status.error {
+            background: #ef444420;
+            border-color: #ef4444;
+        }
+
+        @media (max-width: 600px) {
+            .flashcard-word {
+                font-size: 40px;
             }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
+            .flashcard-meaning {
+                font-size: 32px;
             }
-            
-            .word-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .word-actions {
-                align-self: flex-end;
-            }
-            
-            .voice-controls {
-                flex-direction: column;
+            .btn-group button {
+                min-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📚 Vocabulary Trainer Pro 🔊</h1>
-        
-        <!-- Login Screen -->
+        <h1>📚 ADVANCED SPEAKING LABS</h1>
+
+        <!-- Mr AbdulAziz's Quote -->
+        <div class="quote-banner">
+            "Either increase sacrifices or reduce dreams"
+            <div class="quote-author">— Mr AbdulAziz</div>
+        </div>
+
+        <!-- Login -->
         <div class="card" id="login">
-            <h2>Welcome Student!</h2>
-            <div class="input-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your name">
-            </div>
-            <div class="input-group">
-                <label for="group">Class/Group</label>
-                <input type="text" id="group" placeholder="Enter your class">
-            </div>
+            <h2>Welcome!</h2>
+            <input type="text" id="name" placeholder="Your full name">
+            <input type="text" id="group" placeholder="Class/Group (e.g., 9A)">
             
-            <!-- Voice Settings on Login -->
-            <div class="voice-settings">
-                <h3>🔊 English Pronunciation</h3>
-                <p>Hear English words spoken aloud to improve your listening skills:</p>
-                <div class="input-group">
-                    <label>
-                        <input type="checkbox" id="enableVoice" checked>
-                        Enable English pronunciation
-                    </label>
-                </div>
-                <div class="input-group">
-                    <label for="voiceSpeed">Speech Speed:</label>
-                    <select id="voiceSpeed">
-                        <option value="0.7">Slow</option>
-                        <option value="0.9" selected>Normal</option>
-                        <option value="1.1">Fast</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>
-                        <input type="checkbox" id="autoPronounce" checked>
-                        Auto-pronounce words during practice
-                    </label>
-                </div>
+            <div style="margin: 15px 0;">
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="enableVoice" checked>
+                    Enable voice pronunciation
+                </label>
             </div>
             
             <button onclick="startApp()">Start Learning</button>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #94a3b8;">
+                🤖 Your progress will be sent to your teacher
+            </p>
         </div>
-        
-        <!-- Main Dashboard -->
+
+        <!-- Dashboard -->
         <div class="card hidden" id="dashboard">
             <div class="flex-between">
-                <h2 id="userWelcome"></h2>
+                <h2 id="welcomeMessage"></h2>
                 <div>
-                    <button onclick="toggleVoice()" class="voice" id="voiceToggle">
-                        🔊 Pronunciation: ON
-                    </button>
-                    <button onclick="showResetConfirm()" class="danger">Reset All Data</button>
+                    <button onclick="toggleVoice()" class="voice" id="voiceBtn">🔊 ON</button>
+                    <button onclick="showResetConfirm()" class="danger">Reset</button>
                 </div>
             </div>
-            
-            <div class="stats">
+
+            <!-- Telegram Status -->
+            <div id="telegramStatus" class="telegram-status hidden">
+                <span>🤖</span>
+                <span id="telegramMessage"></span>
+            </div>
+
+            <div class="stats-grid">
                 <div class="stat-card">
                     <h3 id="totalWords">0</h3>
                     <p>Total Words</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="activeWords">0</h3>
-                    <p>Active Words</p>
+                    <h3 id="masteredWords">0</h3>
+                    <p>Mastered</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="mistakesCount">0</h3>
-                    <p>Mistakes</p>
+                    <h3 id="wordMistakesCount">0</h3>
+                    <p>Word Mistakes</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="avgScore">0%</h3>
-                    <p>Average Score</p>
+                    <h3 id="dictMistakesCount">0</h3>
+                    <p>Dictation Mistakes</p>
                 </div>
             </div>
-            
+
             <div class="btn-group">
-                <button onclick="showSection('addWord')">➕ Add New Word</button>
-                <button onclick="startPractice()" class="success">🎯 Start Practice</button>
-                <button onclick="startMistakePractice()" class="warning">🔁 Practice Mistakes</button>
-                <button onclick="showSection('viewWords')">📖 View All Words</button>
-                <button onclick="showSection('history')">📊 View History</button>
+                <button onclick="showAddWord()">➕ Add Word</button>
+                <button onclick="startFlashcards()" class="success">🃏 Flashcards</button>
+                <button onclick="startDictation()" class="voice">🎧 Dictation</button>
+                <button onclick="showMistakeOptions()" class="warning">🔁 Practice Mistakes</button>
+                <button onclick="showWordList()">📖 Word List</button>
+                <button onclick="showHistory()">📊 History</button>
             </div>
         </div>
-        
-        <!-- Add Word Section -->
+
+        <!-- Add Word -->
         <div class="card hidden" id="addWord">
-            <h2>Add New Vocabulary</h2>
-            <div class="input-group">
-                <label for="word">English Word</label>
-                <input type="text" id="word" placeholder="e.g., computer">
-                <button onclick="speakCurrentText('word')" class="voice" style="width: auto; margin-top: 5px;">
-                    🔊 Hear Pronunciation
-                </button>
-            </div>
-            <div class="input-group">
-                <label for="meaning">Uzbek Meaning</label>
-                <input type="text" id="meaning" placeholder="e.g., kompyuter">
-            </div>
-            <div class="input-group">
-                <label for="category">Category (Optional)</label>
-                <select id="category">
-                    <option value="general">General</option>
-                    <option value="technology">Technology</option>
-                    <option value="food">Food & Drink</option>
-                    <option value="travel">Travel</option>
-                    <option value="academic">Academic</option>
-                    <option value="business">Business</option>
-                    <option value="custom">Custom...</option>
-                </select>
-                <input type="text" id="customCategory" class="hidden" placeholder="Enter custom category">
-            </div>
-            <div class="input-group">
-                <label for="example">Example Sentence (Optional)</label>
-                <input type="text" id="example" placeholder="e.g., I use my computer for studying">
-                <button onclick="speakCurrentText('example')" class="voice" style="width: auto; margin-top: 5px;">
-                    🔊 Hear Example
-                </button>
-            </div>
+            <h2>Add New Word</h2>
+            <input type="text" id="word" placeholder="English word">
+            <input type="text" id="meaning" placeholder="Uzbek meaning">
+            
+            <select id="category">
+                <option value="general">General</option>
+                <option value="technology">Technology</option>
+                <option value="food">Food & Drink</option>
+                <option value="travel">Travel</option>
+                <option value="academic">Academic</option>
+                <option value="business">Business</option>
+            </select>
+            
+            <input type="text" id="example" placeholder="Example sentence (optional)">
+            
             <div class="btn-group">
                 <button onclick="addWord()">💾 Save Word</button>
-                <button onclick="showSection('dashboard')" class="secondary">← Back to Dashboard</button>
+                <button onclick="showSection('dashboard')" class="secondary">← Dashboard</button>
             </div>
         </div>
-        
-        <!-- View Words Section -->
-        <div class="card hidden" id="viewWords">
-            <h2>Your Vocabulary List</h2>
-            <div class="category-filter">
-                <label for="filterCategory">Filter by Category:</label>
-                <select id="filterCategory" onchange="filterWords()">
-                    <option value="all">All Categories</option>
-                </select>
-            </div>
-            <div class="word-list" id="wordsContainer">
-                <!-- Words will be loaded here -->
-            </div>
-            <button onclick="showSection('dashboard')" class="secondary">← Back to Dashboard</button>
+
+        <!-- Word List -->
+        <div class="card hidden" id="wordList">
+            <h2>My Vocabulary</h2>
+            <div class="word-list" id="wordsContainer"></div>
+            <button onclick="showSection('dashboard')" class="secondary">← Back</button>
         </div>
-        
-        <!-- Practice Section -->
-        <div class="card hidden" id="practice">
-            <h2>Practice Session</h2>
-            <div class="flex-between">
-                <h3 id="question">Word will appear here</h3>
-                <span id="sessionInfo"></span>
-            </div>
-            
-            <!-- Voice Controls -->
-            <div class="voice-controls" id="practiceVoiceControls">
-                <button onclick="speakCurrentWord()" class="voice-btn">
-                    🔊 Hear Word
-                </button>
-                <button onclick="repeatWord()" class="voice-btn">
-                    🔁 Repeat 3 Times
-                </button>
-                <button onclick="speakSlowly()" class="voice-btn">
-                    🐢 Speak Slowly
-                </button>
-                <button onclick="spellWord()" class="voice-btn">
-                    🔤 Spell Word
-                </button>
-            </div>
-            
-            <div id="feedback" class="feedback hidden"></div>
-            
-            <div class="input-group">
-                <label for="answer">Type the meaning in Uzbek:</label>
-                <input type="text" id="answer" placeholder="Enter meaning..." autocomplete="off">
-                <div class="pronunciation-hint">
-                    Tip: Click 🔊 buttons to hear English pronunciation
-                </div>
-            </div>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-            <p id="progressText">Question 0 of 0</p>
-            
-            <div class="btn-group">
-                <button onclick="submitAnswer()" id="submitBtn">✅ Submit Answer</button>
-                <button onclick="skipWord()" class="warning">⏭️ Skip</button>
-                <button onclick="endPractice()" class="danger">❌ End Session</button>
-            </div>
-        </div>
-        
-        <!-- Results Section -->
-        <div class="card hidden" id="results">
-            <h2>Practice Results</h2>
-            <div class="stat-card" style="background: var(--card-bg);">
-                <h3 id="finalScore">0/0</h3>
-                <p id="scorePercentage">0%</p>
-            </div>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="scoreFill"></div>
-            </div>
-            
-            <h3>Session Summary</h3>
-            <p><strong>Duration:</strong> <span id="sessionDuration">0 seconds</span></p>
-            <p><strong>Date:</strong> <span id="sessionDate"></span></p>
-            
-            <h3 id="mistakesTitle">Words to Review</h3>
-            <div id="mistakesList"></div>
-            
-            <div class="btn-group">
-                <button onclick="showSection('dashboard')">🏠 Back to Dashboard</button>
-                <button onclick="restartPractice()" class="success">🔄 Practice Again</button>
-            </div>
-        </div>
-        
-        <!-- History Section -->
+
+        <!-- History -->
         <div class="card hidden" id="history">
             <h2>Practice History</h2>
-            <div id="historyList">
-                <!-- History items will be loaded here -->
-            </div>
-            <button onclick="showSection('dashboard')" class="secondary">← Back to Dashboard</button>
+            <div id="historyContainer" class="word-list"></div>
+            <button onclick="showSection('dashboard')" class="secondary">← Back</button>
         </div>
-        
-        <!-- Reset Confirmation Modal -->
-        <div class="card hidden" id="resetModal">
-            <h2>⚠️ Reset All Data?</h2>
-            <p>This will delete all words, mistakes, and history. This action cannot be undone.</p>
+
+        <!-- Mistake Options -->
+        <div class="card hidden" id="mistakeOptions">
+            <h2>🔁 Practice Mistakes</h2>
+            <p style="margin-bottom: 20px;">Choose what to practice:</p>
+            
+            <div class="btn-group" style="flex-direction: column;">
+                <button onclick="startMistakePractice('words')" class="success" id="wordMistakeBtn">
+                    📝 Word Mistakes (0)
+                </button>
+                <button onclick="startMistakePractice('dictation')" class="voice" id="dictMistakeBtn">
+                    🎧 Dictation Mistakes (0)
+                </button>
+                <button onclick="showSection('dashboard')" class="secondary">← Back</button>
+            </div>
+        </div>
+
+        <!-- FLASHCARDS -->
+        <div class="card hidden" id="flashcardSection">
+            <h2>🃏 Flashcard Practice</h2>
+
+            <div class="flashcard-container" onclick="flipFlashcard()">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-front">
+                        <div class="flashcard-word" id="flashcardWord"></div>
+                        <div class="flashcard-example" id="flashcardExample"></div>
+                        <div class="flashcard-progress">👆 Click to flip</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-meaning" id="flashcardMeaning"></div>
+                        <div class="flashcard-progress" id="flashcardLevel"></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="btn-group">
-                <button onclick="resetAllData()" class="danger">Yes, Reset Everything</button>
+                <button onclick="prevFlashcard()" class="secondary">← Previous</button>
+                <button onclick="markFlashcardCorrect()" class="success">✓ Correct</button>
+                <button onclick="markFlashcardIncorrect()" class="warning">✗ Incorrect</button>
+                <button onclick="nextFlashcard()" class="secondary">Next →</button>
+            </div>
+
+            <div class="flex-between" style="margin-top: 20px;">
+                <span id="flashcardCounter"></span>
+                <button onclick="endFlashcards()" class="secondary">Exit</button>
+            </div>
+        </div>
+
+        <!-- Flashcard Results -->
+        <div class="card hidden" id="flashcardResults">
+            <h2>📊 Flashcard Results</h2>
+            
+            <div class="results-card">
+                <div class="results-score" id="flashcardScore">0%</div>
+                <div class="results-detail" id="flashcardCorrect">0 correct</div>
+                <div class="results-detail" id="flashcardWrong">0 mistakes</div>
+                <div class="results-detail" id="flashcardTotal">0 total words</div>
+            </div>
+            
+            <div id="flashcardTelegramStatus" class="telegram-status hidden">
+                <span>🤖</span>
+                <span>Results sent to your teacher!</span>
+            </div>
+            
+            <div class="btn-group">
+                <button onclick="restartFlashcards()" class="success">🔄 Practice Again</button>
+                <button onclick="showSection('dashboard')" class="secondary">🏠 Dashboard</button>
+            </div>
+        </div>
+
+        <!-- DICTATION -->
+        <div class="card hidden" id="dictationSection">
+            <h2>🎧 Dictation Challenge</h2>
+            <p class="dictation-hint">Listen and type what you hear</p>
+
+            <div class="dictation-area">
+                <div class="dictation-center">
+                    <div class="big-voice-icon">🔊</div>
+                    
+                    <div class="btn-group" style="width: 100%;">
+                        <button onclick="playDictationWord()" class="voice">🔊 Play</button>
+                        <button onclick="playDictationSpelling()" class="voice">🔤 Spell</button>
+                        <button onclick="playDictationSlow()" class="voice">🐢 Slow</button>
+                    </div>
+
+                    <input type="text" id="dictationAnswer" class="dictation-input" 
+                           placeholder="Type here..." autocomplete="off">
+
+                    <div class="btn-group" style="width: 100%;">
+                        <button onclick="checkDictation()" class="success">✅ Check</button>
+                        <button onclick="nextDictation()" class="secondary">⏭️ Next</button>
+                        <button onclick="skipDictation()" class="warning">⏩ Skip</button>
+                    </div>
+
+                    <div id="dictationFeedback" class="dictation-feedback hidden"></div>
+
+                    <div class="flex-between" style="width: 100%; margin-top: 20px;">
+                        <span id="dictationScore">Score: 0/0</span>
+                        <span id="dictationProgress">Word 1/∞</span>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="endDictationEarly()" class="secondary">← End Session</button>
+        </div>
+
+        <!-- Dictation Results -->
+        <div class="card hidden" id="dictationResults">
+            <h2>📊 Dictation Results</h2>
+            
+            <div class="results-card">
+                <div class="results-score" id="dictationScoreResult">0%</div>
+                <div class="results-detail" id="dictationCorrectResult">0 correct</div>
+                <div class="results-detail" id="dictationWrongResult">0 mistakes</div>
+                <div class="results-detail" id="dictationTotalResult">0 total words</div>
+            </div>
+            
+            <div id="dictationTelegramStatus" class="telegram-status hidden">
+                <span>🤖</span>
+                <span>Results sent to your teacher!</span>
+            </div>
+            
+            <div class="btn-group">
+                <button onclick="restartDictation()" class="success">🔄 Practice Again</button>
+                <button onclick="showSection('dashboard')" class="secondary">🏠 Dashboard</button>
+            </div>
+        </div>
+
+        <!-- Reset Confirmation -->
+        <div class="card hidden" id="resetModal">
+            <h2>⚠️ Reset Everything?</h2>
+            <p>All words and progress will be deleted.</p>
+            <p style="color: #f59e0b; margin: 10px 0;">"Either increase sacrifices or reduce dreams"</p>
+            <div class="btn-group">
+                <button onclick="resetAllData()" class="danger">Yes, Reset</button>
                 <button onclick="hideResetModal()" class="secondary">Cancel</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Data structures
-        let vocabulary = [];
-        let mistakeFolder = [];
-        let practiceHistory = [];
-        let categories = new Set(['general']);
+        // ==================== ✅ FIXED TELEGRAM CONFIG ====================
+        const TELEGRAM_BOT_TOKEN = '8358278097:AAE7zvXUZ6WE-OzNoBcdlMwS4WM4qV6iEtI';
+        const TEACHER_CHAT_ID = '1907669079';  // ✅ YOUR REAL CHAT ID!
         
-        // Practice session variables
-        let currentSession = [];
-        let currentIndex = 0;
-        let correctAnswers = 0;
-        let wrongAnswers = [];
-        let sessionStartTime = null;
-        let sessionType = '';
+        // ==================== DATA ====================
+        let vocabulary = [];
+        let wordMistakes = [];
+        let dictationMistakes = [];
+        let practiceHistory = [];
+        let categories = ['general', 'technology', 'food', 'travel', 'academic', 'business'];
         
         // User info
         let userName = '';
         let userGroup = '';
         
-        // Voice settings - ENGLISH ONLY
+        // Voice settings
         let voiceEnabled = true;
-        let autoPronounce = true;
         let voiceSpeed = 0.9;
         let speechSynth = window.speechSynthesis;
         let englishVoice = null;
-        
-        // Load data from localStorage on startup
-        function loadData() {
-            const savedVocab = localStorage.getItem('vocabTrainer_words');
-            const savedMistakes = localStorage.getItem('vocabTrainer_mistakes');
-            const savedHistory = localStorage.getItem('vocabTrainer_history');
-            const savedUser = localStorage.getItem('vocabTrainer_user');
-            const savedCategories = localStorage.getItem('vocabTrainer_categories');
-            const savedSettings = localStorage.getItem('vocabTrainer_settings');
-            
-            if (savedVocab) vocabulary = JSON.parse(savedVocab);
-            if (savedMistakes) mistakeFolder = JSON.parse(savedMistakes);
-            if (savedHistory) practiceHistory = JSON.parse(savedHistory);
-            if (savedUser) {
-                const userData = JSON.parse(savedUser);
-                userName = userData.name || '';
-                userGroup = userData.group || '';
+
+        // Flashcard variables
+        let flashcardSession = [];
+        let flashcardIndex = 0;
+        let flashcardCorrect = 0;
+        let flashcardWrong = 0;
+        let flashcardTotal = 0;
+        let flashcardMistakeDetails = [];
+
+        // Dictation variables
+        let dictationSession = [];
+        let dictationIndex = 0;
+        let dictationCorrect = 0;
+        let dictationWrong = 0;
+        let dictationTotal = 0;
+        let currentDictationWord = null;
+        let dictationMistakeDetails = [];
+
+        // ==================== TELEGRAM FUNCTIONS ====================
+        async function sendToTelegram(message, section = 'flashcard') {
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TEACHER_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                const result = await response.json();
+                console.log('Telegram result:', result);
+                
+                if (result.ok) {
+                    showTelegramStatus('success', '✅ Results sent to your teacher!', section);
+                } else {
+                    showTelegramStatus('error', '❌ Failed to send results', section);
+                }
+                
+                return result.ok;
+            } catch (error) {
+                console.error('Telegram error:', error);
+                showTelegramStatus('error', '❌ Network error - results not sent', section);
+                return false;
             }
-            if (savedCategories) {
-                categories = new Set(JSON.parse(savedCategories));
-            }
-            if (savedSettings) {
-                const settings = JSON.parse(savedSettings);
-                voiceEnabled = settings.voiceEnabled !== false;
-                autoPronounce = settings.autoPronounce !== false;
-                voiceSpeed = settings.voiceSpeed || 0.9;
-            }
-            
-            updateCategoriesDropdown();
-            updateStats();
-            initializeVoice();
         }
-        
-        // Initialize voice synthesis - ENGLISH ONLY
+
+        function showTelegramStatus(type, message, section = 'flashcard') {
+            const statusId = section === 'flashcard' ? 'flashcardTelegramStatus' : 'dictationTelegramStatus';
+            const statusEl = document.getElementById(statusId);
+            
+            if (statusEl) {
+                statusEl.className = `telegram-status ${type}`;
+                statusEl.querySelector('span:last-child').textContent = message;
+                statusEl.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    statusEl.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        function formatFlashcardResults() {
+            const date = new Date();
+            const formattedDate = date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            
+            const mistakeText = flashcardMistakeDetails.map(m => 
+                `• ${m.word}`
+            ).join('\n');
+            
+            const correctWords = flashcardSession
+                .filter(w => !flashcardMistakeDetails.some(m => m.id === w.id))
+                .map(w => `• ${w.word}`)
+                .join('\n');
+            
+            return `
+🤖 <b>ADVANCED SPEAKING LABS</b>
+─────────────────────
+👤 Student: ${userName}${userGroup ? ` (${userGroup})` : ''}
+📝 Practice: Flashcards
+📊 Score: ${flashcardCorrect}/${flashcardTotal} (${Math.round((flashcardCorrect/flashcardTotal)*100)}%)
+⏰ Time: ${formattedDate}
+
+✅ <b>Correct Words (${flashcardCorrect}):</b>
+${correctWords || '• None'}
+
+❌ <b>Mistakes (${flashcardWrong} words):</b>
+${mistakeText || '• None'}
+
+📈 Keep up the great work!
+            `;
+        }
+
+        function formatDictationResults() {
+            const date = new Date();
+            const formattedDate = date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            
+            const mistakeText = dictationMistakeDetails.map(m => 
+                `• ${m.word} → wrote "${m.userAnswer || 'skipped'}"`
+            ).join('\n');
+            
+            const correctWords = dictationSession
+                .filter(w => !dictationMistakeDetails.some(m => m.id === w.id))
+                .map(w => `• ${w.word}`)
+                .join('\n');
+            
+            return `
+🤖 <b>ADVANCED SPEAKING LABS</b>
+─────────────────────
+👤 Student: ${userName}${userGroup ? ` (${userGroup})` : ''}
+📝 Practice: Dictation
+📊 Score: ${dictationCorrect}/${dictationTotal} (${Math.round((dictationCorrect/dictationTotal)*100)}%)
+⏰ Time: ${formattedDate}
+
+✅ <b>Correct Words (${dictationCorrect}):</b>
+${correctWords || '• None'}
+
+❌ <b>Mistakes (${dictationWrong} words):</b>
+${mistakeText || '• None'}
+
+📈 Keep practicing!
+            `;
+        }
+
+        // ==================== VOICE ====================
         function initializeVoice() {
-            if (!speechSynth) {
-                console.log('Speech synthesis not supported');
-                voiceEnabled = false;
-                return;
-            }
-            
-            // Load available voices
-            function loadVoices() {
+            if (!speechSynth) return;
+            const loadVoices = () => {
                 const voices = speechSynth.getVoices();
-                
-                // Find best English voice
-                englishVoice = voices.find(voice => 
-                    voice.lang.startsWith('en') && 
-                    (voice.name.includes('Google') || voice.name.includes('Samantha') || voice.name.includes('Daniel')
-                )) || voices.find(voice => voice.lang.startsWith('en-US')) || voices[0];
-                
-                // Update UI to show voice status
-                updateVoiceUI();
-            }
-            
-            // Some browsers load voices asynchronously
-            if (speechSynth.onvoiceschanged !== undefined) {
-                speechSynth.onvoiceschanged = loadVoices;
-            }
-            
+                englishVoice = voices.find(v => v.lang.includes('en')) || voices[0];
+            };
+            if (speechSynth.onvoiceschanged) speechSynth.onvoiceschanged = loadVoices;
             loadVoices();
         }
-        
-        // Save all data to localStorage
-        function saveData() {
-            localStorage.setItem('vocabTrainer_words', JSON.stringify(vocabulary));
-            localStorage.setItem('vocabTrainer_mistakes', JSON.stringify(mistakeFolder));
-            localStorage.setItem('vocabTrainer_history', JSON.stringify(practiceHistory));
-            localStorage.setItem('vocabTrainer_user', JSON.stringify({
-                name: userName,
-                group: userGroup
-            }));
-            localStorage.setItem('vocabTrainer_categories', JSON.stringify(Array.from(categories)));
-            localStorage.setItem('vocabTrainer_settings', JSON.stringify({
-                voiceEnabled: voiceEnabled,
-                autoPronounce: autoPronounce,
-                voiceSpeed: voiceSpeed
-            }));
-        }
-        
-        // Initialize app
-        function initializeApp() {
-            loadData();
-            
-            // Set voice settings from UI
-            voiceEnabled = document.getElementById('enableVoice').checked;
-            autoPronounce = document.getElementById('autoPronounce').checked;
-            voiceSpeed = parseFloat(document.getElementById('voiceSpeed').value);
-            
-            // Check if user already exists
-            if (userName) {
-                document.getElementById('login').classList.add('hidden');
-                document.getElementById('dashboard').classList.remove('hidden');
-                document.getElementById('userWelcome').textContent = `Welcome back, ${userName}!`;
-                updateStats();
-                updateVoiceUI();
-            }
-        }
-        
-        // Start the app (login)
-        function startApp() {
-            userName = document.getElementById('name').value.trim();
-            userGroup = document.getElementById('group').value.trim();
-            
-            if (!userName) {
-                alert('Please enter your name');
-                return;
-            }
-            
-            // Save voice settings
-            voiceEnabled = document.getElementById('enableVoice').checked;
-            autoPronounce = document.getElementById('autoPronounce').checked;
-            voiceSpeed = parseFloat(document.getElementById('voiceSpeed').value);
-            
-            document.getElementById('login').classList.add('hidden');
-            document.getElementById('dashboard').classList.remove('hidden');
-            document.getElementById('userWelcome').textContent = `Welcome, ${userName}!`;
-            
-            saveData();
-            updateStats();
-            updateVoiceUI();
-        }
-        
-        // Update voice UI
-        function updateVoiceUI() {
-            const voiceToggle = document.getElementById('voiceToggle');
-            if (voiceToggle) {
-                voiceToggle.textContent = voiceEnabled ? '🔊 Pronunciation: ON' : '🔇 Pronunciation: OFF';
-                voiceToggle.style.background = voiceEnabled ? 'var(--purple)' : '#475569';
-            }
-        }
-        
-        // Toggle voice on/off
-        function toggleVoice() {
-            voiceEnabled = !voiceEnabled;
-            updateVoiceUI();
-            saveData();
-            
-            if (voiceEnabled) {
-                speakText('Pronunciation enabled');
-            }
-        }
-        
-        // Speak text in English
+
         function speakText(text) {
             if (!voiceEnabled || !speechSynth || !text) return;
-            
-            // Cancel any ongoing speech
             speechSynth.cancel();
-            
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.voice = englishVoice;
             utterance.rate = voiceSpeed;
-            utterance.pitch = 1;
-            utterance.volume = 1;
             utterance.lang = 'en-US';
-            
             speechSynth.speak(utterance);
         }
-        
-        // Speak current text from input field
-        function speakCurrentText(fieldId) {
-            const text = document.getElementById(fieldId).value.trim();
-            if (text) {
-                speakText(text);
-            }
+
+        function speakSpelling(text) {
+            if (!text) return;
+            const spelled = text.split('').join(' ');
+            speakText(spelled);
         }
-        
-        // Speak current practice word
-        function speakCurrentWord() {
-            if (currentIndex < currentSession.length) {
-                const word = currentSession[currentIndex].word;
-                speakText(word);
-            }
+
+        function toggleVoice() {
+            voiceEnabled = !voiceEnabled;
+            document.getElementById('voiceBtn').textContent = voiceEnabled ? '🔊 ON' : '🔇 OFF';
         }
-        
-        // Repeat word 3 times
-        function repeatWord() {
-            if (currentIndex >= currentSession.length) return;
-            
-            const word = currentSession[currentIndex].word;
-            
-            // Speak word 3 times with pauses
-            speakText(word);
-            setTimeout(() => speakText(word), 1000);
-            setTimeout(() => speakText(word), 2000);
-        }
-        
-        // Speak slowly
-        function speakSlowly() {
-            if (currentIndex >= currentSession.length) return;
-            
-            const word = currentSession[currentIndex].word;
-            
-            // Save current speed
-            const originalSpeed = voiceSpeed;
-            voiceSpeed = 0.7;
-            
-            speakText(word);
-            
-            // Restore original speed after speaking
-            setTimeout(() => {
-                voiceSpeed = originalSpeed;
-            }, 1000);
-        }
-        
-        // Spell word letter by letter
-        function spellWord() {
-            if (currentIndex >= currentSession.length) return;
-            
-            const word = currentSession[currentIndex].word;
-            
-            // Spell the word
-            const spelled = word.split('').join(' ');
-            speakText(`Spelling: ${spelled}`);
-        }
-        
-        // Show/hide sections
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.card').forEach(card => {
-                if (card.id !== 'login') {
-                    card.classList.add('hidden');
+
+        // ==================== DATA MANAGEMENT ====================
+        function loadData() {
+            const saved = localStorage.getItem('vocabTrainer_data_v4');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    vocabulary = data.vocabulary || [];
+                    wordMistakes = data.wordMistakes || [];
+                    dictationMistakes = data.dictationMistakes || [];
+                    practiceHistory = data.practiceHistory || [];
+                    userName = data.userName || '';
+                    userGroup = data.userGroup || '';
+                } catch (e) {
+                    console.log('Error loading data');
                 }
-            });
-            
-            // Show requested section
-            document.getElementById(sectionId).classList.remove('hidden');
-            
-            // Load data for specific sections
-            if (sectionId === 'viewWords') {
-                displayWordList();
-            } else if (sectionId === 'history') {
-                displayHistory();
-            } else if (sectionId === 'dashboard') {
-                updateStats();
-                updateVoiceUI();
             }
         }
-        
-        // Update statistics
+
+        function saveData() {
+            const data = { 
+                vocabulary, 
+                wordMistakes, 
+                dictationMistakes, 
+                practiceHistory, 
+                userName, 
+                userGroup 
+            };
+            localStorage.setItem('vocabTrainer_data_v4', JSON.stringify(data));
+        }
+
+        // ==================== APP START ====================
+        function startApp() {
+            userName = document.getElementById('name').value.trim() || 'Student';
+            userGroup = document.getElementById('group').value.trim();
+            voiceEnabled = document.getElementById('enableVoice').checked;
+
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('welcomeMessage').textContent = `Welcome, ${userName}!`;
+
+            saveData();
+            updateStats();
+            initializeVoice();
+            
+            // Send welcome notification
+            sendToTelegram(`👋 ${userName}${userGroup ? ' ('+userGroup+')' : ''} started using the app!`);
+        }
+
         function updateStats() {
-            const totalWords = vocabulary.length;
-            const activeWords = vocabulary.filter(w => w.level < 5).length;
-            const uniqueMistakes = new Set(mistakeFolder.map(m => m.word)).size;
+            document.getElementById('totalWords').textContent = vocabulary.length;
+            document.getElementById('masteredWords').textContent = vocabulary.filter(w => w.level >= 4).length;
+            document.getElementById('wordMistakesCount').textContent = wordMistakes.length;
+            document.getElementById('dictMistakesCount').textContent = dictationMistakes.length;
             
-            // Calculate average score from history
-            let avgScore = 0;
-            if (practiceHistory.length > 0) {
-                const totalScore = practiceHistory.reduce((sum, session) => {
-                    return sum + (session.correct / session.total * 100);
-                }, 0);
-                avgScore = Math.round(totalScore / practiceHistory.length);
-            }
-            
-            document.getElementById('totalWords').textContent = totalWords;
-            document.getElementById('activeWords').textContent = activeWords;
-            document.getElementById('mistakesCount').textContent = uniqueMistakes;
-            document.getElementById('avgScore').textContent = `${avgScore}%`;
+            const wordBtn = document.getElementById('wordMistakeBtn');
+            const dictBtn = document.getElementById('dictMistakeBtn');
+            if (wordBtn) wordBtn.innerHTML = `📝 Word Mistakes (${wordMistakes.length})`;
+            if (dictBtn) dictBtn.innerHTML = `🎧 Dictation Mistakes (${dictationMistakes.length})`;
         }
-        
-        // Add a new word
-        function addWord() {
-            const word = document.getElementById('word').value.trim();
-            const meaning = document.getElementById('meaning').value.trim();
-            let category = document.getElementById('category').value;
-            const example = document.getElementById('example').value.trim();
-            
-            if (!word || !meaning) {
-                alert('Please enter both word and meaning');
-                return;
-            }
-            
-            // Handle custom category
-            if (category === 'custom') {
-                category = document.getElementById('customCategory').value.trim();
-                if (!category) category = 'general';
-            }
-            
-            // Add to categories set
-            categories.add(category);
-            
-            // Add word to vocabulary
-            vocabulary.push({
-                id: Date.now(), // Unique ID
-                word: word,
-                meaning: meaning,
-                category: category,
-                example: example,
-                level: 1, // Spaced repetition level (1-5)
-                createdAt: new Date().toISOString(),
-                lastPracticed: null,
-                correctCount: 0,
-                wrongCount: 0
-            });
-            
-            // Clear form
+
+        function showSection(id) {
+            document.querySelectorAll('.card').forEach(c => c.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function showWordList() {
+            displayWordList();
+            showSection('wordList');
+        }
+
+        function showHistory() {
+            displayHistory();
+            showSection('history');
+        }
+
+        function showAddWord() {
             document.getElementById('word').value = '';
             document.getElementById('meaning').value = '';
             document.getElementById('example').value = '';
             document.getElementById('category').value = 'general';
-            document.getElementById('customCategory').classList.add('hidden');
-            
+            showSection('addWord');
+            document.getElementById('word').focus();
+        }
+
+        // ==================== ADD WORD ====================
+        function addWord() {
+            const word = document.getElementById('word').value.trim();
+            const meaning = document.getElementById('meaning').value.trim();
+
+            if (!word || !meaning) {
+                alert('Enter both word and meaning!');
+                return;
+            }
+
+            vocabulary.push({
+                id: Date.now() + Math.random(),
+                word: word,
+                meaning: meaning,
+                category: document.getElementById('category').value,
+                example: document.getElementById('example').value.trim() || '',
+                level: 1,
+                correctCount: 0,
+                wrongCount: 0,
+                lastPracticed: null
+            });
+
+            document.getElementById('word').value = '';
+            document.getElementById('meaning').value = '';
+            document.getElementById('example').value = '';
+
             saveData();
             updateStats();
-            updateCategoriesDropdown();
-            
-            // Speak the new word if voice is enabled
-            if (voiceEnabled) {
-                setTimeout(() => {
-                    speakText(word);
-                }, 300);
-            }
-            
-            alert(`"${word}" added successfully!`);
+            alert(`"${word}" added!`);
+            document.getElementById('word').focus();
         }
-        
-        // Update categories dropdown
-        function updateCategoriesDropdown() {
-            const filterSelect = document.getElementById('filterCategory');
-            const addSelect = document.getElementById('category');
-            
-            // Clear existing options (keeping first ones)
-            while (filterSelect.options.length > 1) filterSelect.remove(1);
-            while (addSelect.options.length > 7) addSelect.remove(7); // Keep 7 default options
-            
-            // Add categories
-            categories.forEach(category => {
-                if (category !== 'general') {
-                    const option1 = document.createElement('option');
-                    option1.value = category;
-                    option1.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-                    filterSelect.appendChild(option1.cloneNode(true));
-                    
-                    const option2 = option1.cloneNode(true);
-                    addSelect.insertBefore(option2, addSelect.lastChild);
-                }
-            });
-        }
-        
-        // Display word list with voice buttons (English only)
-        function displayWordList(filterCategory = 'all') {
+
+        function displayWordList() {
             const container = document.getElementById('wordsContainer');
             container.innerHTML = '';
             
-            let filteredWords = vocabulary;
-            if (filterCategory !== 'all') {
-                filteredWords = vocabulary.filter(w => w.category === filterCategory);
-            }
-            
-            if (filteredWords.length === 0) {
-                container.innerHTML = '<p style="text-align: center; padding: 20px;">No words found</p>';
+            if (vocabulary.length === 0) {
+                container.innerHTML = '<p style="text-align: center; padding: 20px;">No words yet.</p>';
                 return;
             }
-            
-            filteredWords.forEach(word => {
-                const wordElement = document.createElement('div');
-                wordElement.className = 'word-item';
-                wordElement.innerHTML = `
-                    <div class="word-info">
-                        <strong>${word.word}</strong> → ${word.meaning}
-                        <span class="tag">${word.category}</span>
-                        ${word.example ? `<br><small><i>"${word.example}"</i></small>` : ''}
-                        <br>
-                        <small>Level: ${'★'.repeat(word.level)}${'☆'.repeat(5-word.level)} | 
-                        Correct: ${word.correctCount} | Wrong: ${word.wrongCount}</small>
-                    </div>
-                    <div class="word-actions">
-                        <button onclick="speakText('${word.word.replace(/'/g, "\\'")}')" class="voice" style="padding: 5px 10px;">🔊 Hear</button>
-                        ${word.example ? `<button onclick="speakText('${word.example.replace(/'/g, "\\'")}')" class="voice" style="padding: 5px 10px; background: #7c3aed;">📝 Example</button>` : ''}
-                        <button onclick="editWord(${word.id})" class="secondary" style="padding: 5px 10px;">✏️</button>
-                        <button onclick="deleteWord(${word.id})" class="danger" style="padding: 5px 10px;">🗑️</button>
+
+            vocabulary.forEach(word => {
+                container.innerHTML += `
+                    <div class="word-item">
+                        <div>
+                            <strong>${word.word}</strong> → ${word.meaning}
+                            <span class="category-tag">${word.category || 'general'}</span>
+                            <br><small>Level ${word.level} | ✓${word.correctCount} | ✗${word.wrongCount}</small>
+                        </div>
+                        <button onclick="deleteWord(${word.id})" class="secondary" style="padding: 5px 10px;">🗑️</button>
                     </div>
                 `;
-                container.appendChild(wordElement);
             });
         }
-        
-        // Filter words by category
-        function filterWords() {
-            const category = document.getElementById('filterCategory').value;
-            displayWordList(category);
-        }
-        
-        // Edit word
-        function editWord(wordId) {
-            const wordIndex = vocabulary.findIndex(w => w.id === wordId);
-            if (wordIndex === -1) return;
-            
-            const word = vocabulary[wordIndex];
-            const newMeaning = prompt(`Edit meaning for "${word.word}":`, word.meaning);
-            
-            if (newMeaning && newMeaning.trim() !== '') {
-                vocabulary[wordIndex].meaning = newMeaning.trim();
+
+        function deleteWord(id) {
+            if (confirm('Delete this word?')) {
+                vocabulary = vocabulary.filter(w => w.id !== id);
+                wordMistakes = wordMistakes.filter(m => m.id !== id);
+                dictationMistakes = dictationMistakes.filter(m => m.id !== id);
                 saveData();
-                displayWordList(document.getElementById('filterCategory').value);
+                displayWordList();
+                updateStats();
             }
         }
-        
-        // Delete word
-        function deleteWord(wordId) {
-            if (!confirm('Are you sure you want to delete this word?')) return;
-            
-            const wordIndex = vocabulary.findIndex(w => w.id === wordId);
-            if (wordIndex === -1) return;
-            
-            vocabulary.splice(wordIndex, 1);
-            
-            // Also remove from mistake folder
-            mistakeFolder = mistakeFolder.filter(m => m.id !== wordId);
-            
-            saveData();
-            updateStats();
-            displayWordList(document.getElementById('filterCategory').value);
-        }
-        
-        // Start practice session
-        function startPractice(type = 'normal') {
-            if (vocabulary.length === 0) {
-                alert('No words to practice. Please add some words first.');
-                return;
-            }
-            
-            sessionType = type;
-            currentSession = [];
-            currentIndex = 0;
-            correctAnswers = 0;
-            wrongAnswers = [];
-            sessionStartTime = Date.now();
-            
-            if (type === 'mistakes') {
-                // Practice mistakes
-                if (mistakeFolder.length === 0) {
-                    alert('No mistakes to practice. Great job!');
-                    return;
-                }
-                
-                // Get unique mistakes (by word)
-                const mistakeMap = new Map();
-                mistakeFolder.forEach(mistake => {
-                    if (!mistakeMap.has(mistake.word)) {
-                        mistakeMap.set(mistake.word, mistake);
-                    }
-                });
-                
-                currentSession = Array.from(mistakeMap.values());
-                currentSession = shuffleArray(currentSession);
-            } else {
-                // Normal practice with spaced repetition
-                currentSession = getPracticeWords();
-            }
-            
-            // Start session
-            showSection('practice');
-            showNextQuestion();
-        }
-        
-        // Get words for practice based on spaced repetition
-        function getPracticeWords() {
-            // Filter words that need practice
-            let practiceWords = vocabulary.filter(word => {
-                // Words with level 1 or not practiced recently
-                if (word.level === 1) return true;
-                
-                // Higher level words practiced less frequently
-                const daysSincePractice = word.lastPracticed ? 
-                    (Date.now() - new Date(word.lastPracticed).getTime()) / (1000 * 60 * 60 * 24) : 999;
-                
-                return daysSincePractice > (word.level * 2);
-            });
-            
-            // If not enough words, add some random ones
-            if (practiceWords.length < 5) {
-                const allWords = vocabulary.filter(w => !practiceWords.includes(w));
-                const randomWords = shuffleArray(allWords).slice(0, 5 - practiceWords.length);
-                practiceWords = [...practiceWords, ...randomWords];
-            }
-            
-            // Limit to 20 words max per session
-            practiceWords = shuffleArray(practiceWords).slice(0, 20);
-            
-            return practiceWords;
-        }
-        
-        // Practice mistakes
-        function startMistakePractice() {
-            startPractice('mistakes');
-        }
-        
-        // Show next question
-        function showNextQuestion() {
-            if (currentIndex >= currentSession.length) {
-                endPracticeSession();
-                return;
-            }
-            
-            const currentWord = currentSession[currentIndex];
-            document.getElementById('question').textContent = `What does "${currentWord.word}" mean?`;
-            document.getElementById('answer').value = '';
-            document.getElementById('feedback').classList.add('hidden');
-            
-            // Update progress
-            const progressPercent = (currentIndex / currentSession.length) * 100;
-            document.getElementById('progressFill').style.width = `${progressPercent}%`;
-            document.getElementById('progressText').textContent = 
-                `Question ${currentIndex + 1} of ${currentSession.length}`;
-            document.getElementById('sessionInfo').textContent = 
-                sessionType === 'mistakes' ? '🔁 Mistakes Practice' : '🎯 Normal Practice';
-            
-            // Auto-pronounce the word if enabled
-            if (voiceEnabled && autoPronounce) {
-                setTimeout(() => {
-                    speakText(currentWord.word);
-                }, 500);
-            }
-            
-            // Focus on answer input
-            document.getElementById('answer').focus();
-        }
-        
-        // Submit answer
-        function submitAnswer() {
-            const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
-            const currentWord = currentSession[currentIndex];
-            const correctMeaning = currentWord.meaning.toLowerCase().trim();
-            
-            // Get word index in vocabulary
-            const wordIndex = vocabulary.findIndex(w => w.id === currentWord.id);
-            
-            // More accurate matching
-            const isCorrect = checkAnswer(userAnswer, correctMeaning);
-            
-            // Show feedback
-            const feedbackEl = document.getElementById('feedback');
-            feedbackEl.textContent = isCorrect ? 
-                `✅ Correct! "${currentWord.word}" means "${currentWord.meaning}"` :
-                `❌ Incorrect. "${currentWord.word}" means "${currentWord.meaning}"`;
-            feedbackEl.className = `feedback ${isCorrect ? 'correct' : 'wrong'}`;
-            feedbackEl.classList.remove('hidden');
-            
-            // Speak feedback if voice enabled
-            if (voiceEnabled) {
-                if (isCorrect) {
-                    speakText('Correct!');
-                } else {
-                    speakText('Incorrect');
-                    setTimeout(() => {
-                        speakText(currentWord.word);
-                    }, 500);
-                }
-            }
-            
-            // Update word stats
-            if (wordIndex !== -1) {
-                if (isCorrect) {
-                    vocabulary[wordIndex].correctCount++;
-                    vocabulary[wordIndex].level = Math.min(5, vocabulary[wordIndex].level + 1);
-                    correctAnswers++;
-                } else {
-                    vocabulary[wordIndex].wrongCount++;
-                    vocabulary[wordIndex].level = Math.max(1, vocabulary[wordIndex].level - 1);
-                    
-                    // Add to mistakes if not already there
-                    if (!mistakeFolder.some(m => m.id === currentWord.id)) {
-                        mistakeFolder.push({...currentWord});
-                    }
-                    
-                    wrongAnswers.push(currentWord);
-                }
-                
-                vocabulary[wordIndex].lastPracticed = new Date().toISOString();
-            }
-            
-            // Move to next question after delay
-            currentIndex++;
-            setTimeout(showNextQuestion, 2000);
-        }
-        
-        // Improved answer checking
-        function checkAnswer(userAnswer, correctAnswer) {
-            // Remove extra spaces and punctuation
-            userAnswer = userAnswer.replace(/[.,;!?]/g, '').trim();
-            correctAnswer = correctAnswer.replace(/[.,;!?]/g, '').trim();
-            
-            // Split into words for comparison
-            const userWords = userAnswer.split(/\s+/);
-            const correctWords = correctAnswer.split(/\s+/);
-            
-            // Check for exact match
-            if (userAnswer === correctAnswer) return true;
-            
-            // Check if user answer contains all correct words (order doesn't matter)
-            const allCorrectWordsPresent = correctWords.every(word => 
-                userWords.some(uWord => uWord === word)
-            );
-            
-            // Check if user answer is contained within correct answer (for longer phrases)
-            if (correctAnswer.includes(userAnswer) && userAnswer.length > 3) return true;
-            
-            // Check if correct answer is contained within user answer
-            if (userAnswer.includes(correctAnswer) && correctAnswer.length > 3) return true;
-            
-            return allCorrectWordsPresent && userWords.length <= correctWords.length * 2;
-        }
-        
-        // Skip word
-        function skipWord() {
-            currentIndex++;
-            showNextQuestion();
-        }
-        
-        // End practice session early
-        function endPractice() {
-            if (confirm('Are you sure you want to end the practice session?')) {
-                endPracticeSession();
-            }
-        }
-        
-        // End practice session and show results
-        function endPracticeSession() {
-            const sessionDuration = Math.round((Date.now() - sessionStartTime) / 1000);
-            const totalQuestions = currentSession.length;
-            const scorePercentage = Math.round((correctAnswers / totalQuestions) * 100);
-            
-            // Save session to history
-            practiceHistory.unshift({
-                date: new Date().toISOString(),
-                type: sessionType,
-                correct: correctAnswers,
-                total: totalQuestions,
-                duration: sessionDuration,
-                score: scorePercentage
-            });
-            
-            // Keep only last 50 sessions
-            practiceHistory = practiceHistory.slice(0, 50);
-            
-            // Update UI
-            document.getElementById('finalScore').textContent = `${correctAnswers}/${totalQuestions}`;
-            document.getElementById('scorePercentage').textContent = `${scorePercentage}%`;
-            document.getElementById('scoreFill').style.width = `${scorePercentage}%`;
-            document.getElementById('sessionDuration').textContent = 
-                `${sessionDuration} second${sessionDuration !== 1 ? 's' : ''}`;
-            document.getElementById('sessionDate').textContent = 
-                new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString();
-            
-            // Display mistakes
-            const mistakesList = document.getElementById('mistakesList');
-            const mistakesTitle = document.getElementById('mistakesTitle');
-            
-            if (wrongAnswers.length > 0) {
-                mistakesTitle.textContent = `Words to Review (${wrongAnswers.length})`;
-                mistakesList.innerHTML = wrongAnswers.map(word => 
-                    `<div class="mistake-item">
-                        <strong>${word.word}</strong> → ${word.meaning}
-                        ${word.example ? `<br><small><i>"${word.example}"</i></small>` : ''}
-                        <div style="margin-top: 5px;">
-                            <button onclick="speakText('${word.word.replace(/'/g, "\\'")}')" class="voice" style="padding: 3px 8px; font-size: 12px;">🔊 Hear Word</button>
-                            ${word.example ? `<button onclick="speakText('${word.example.replace(/'/g, "\\'")}')" class="voice" style="padding: 3px 8px; font-size: 12px; background: #7c3aed;">🔊 Hear Example</button>` : ''}
-                        </div>
-                    </div>`
-                ).join('');
-            } else {
-                mistakesTitle.textContent = 'Perfect Session!';
-                mistakesList.innerHTML = '<div class="feedback correct">🎉 No mistakes! Excellent work!</div>';
-            }
-            
-            // Speak result if voice enabled
-            if (voiceEnabled) {
-                setTimeout(() => {
-                    speakText(`Practice complete. You got ${correctAnswers} out of ${totalQuestions} correct. That's ${scorePercentage} percent.`);
-                }, 500);
-            }
-            
-            saveData();
-            updateStats();
-            showSection('results');
-        }
-        
-        // Restart practice
-        function restartPractice() {
-            startPractice(sessionType);
-        }
-        
-        // Display practice history
+
         function displayHistory() {
-            const historyList = document.getElementById('historyList');
+            const container = document.getElementById('historyContainer');
+            container.innerHTML = '';
             
             if (practiceHistory.length === 0) {
-                historyList.innerHTML = '<p style="text-align: center; padding: 20px;">No practice history yet</p>';
+                container.innerHTML = '<p style="text-align: center; padding: 20px;">No history yet.</p>';
                 return;
             }
-            
-            historyList.innerHTML = practiceHistory.map(session => `
-                <div class="history-item">
-                    <strong>${new Date(session.date).toLocaleDateString()}</strong>
-                    <span style="float: right; background: ${session.score >= 80 ? '#22c55e' : session.score >= 60 ? '#f59e0b' : '#ef4444'}; 
-                          color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">
-                        ${session.score}%
-                    </span>
-                    <br>
-                    Type: ${session.type === 'mistakes' ? '🔁 Mistakes' : '🎯 Normal'}
-                    | Score: ${session.correct}/${session.total}
-                    | Duration: ${session.duration}s
-                </div>
-            `).join('');
+
+            practiceHistory.slice(0, 20).forEach(session => {
+                container.innerHTML += `
+                    <div class="word-item">
+                        <div>
+                            <strong>${new Date(session.date).toLocaleDateString()}</strong>
+                            <br>${session.type}: ${session.correct}/${session.total} (${session.score}%)
+                        </div>
+                    </div>
+                `;
+            });
         }
-        
-        // Show reset confirmation
+
+        // ==================== MISTAKES PRACTICE ====================
+        function showMistakeOptions() {
+            if (wordMistakes.length === 0 && dictationMistakes.length === 0) {
+                alert('No mistakes yet! Great job!');
+                return;
+            }
+            updateStats();
+            showSection('mistakeOptions');
+        }
+
+        function startMistakePractice(type) {
+            if (type === 'words') {
+                if (wordMistakes.length === 0) {
+                    alert('No word mistakes!');
+                    return;
+                }
+                flashcardSession = [...wordMistakes];
+                flashcardIndex = 0;
+                flashcardCorrect = 0;
+                flashcardWrong = 0;
+                flashcardTotal = flashcardSession.length;
+                flashcardMistakeDetails = [];
+                showFlashcard();
+                showSection('flashcardSection');
+            } else {
+                if (dictationMistakes.length === 0) {
+                    alert('No dictation mistakes!');
+                    return;
+                }
+                dictationSession = [...dictationMistakes];
+                dictationIndex = 0;
+                dictationCorrect = 0;
+                dictationWrong = 0;
+                dictationTotal = dictationSession.length;
+                dictationMistakeDetails = [];
+                currentDictationWord = dictationSession[0];
+                document.getElementById('dictationFeedback').classList.add('hidden');
+                document.getElementById('dictationAnswer').value = '';
+                updateDictationUI();
+                showSection('dictationSection');
+                setTimeout(() => playDictationWord(), 500);
+            }
+        }
+
+        // ==================== FLASHCARDS ====================
+        function startFlashcards() {
+            if (vocabulary.length === 0) {
+                alert('Add some words first!');
+                return;
+            }
+
+            const shuffled = [...vocabulary].sort(() => Math.random() - 0.5);
+            flashcardSession = shuffled.slice(0, Math.min(20, vocabulary.length));
+            flashcardIndex = 0;
+            flashcardCorrect = 0;
+            flashcardWrong = 0;
+            flashcardTotal = flashcardSession.length;
+            flashcardMistakeDetails = [];
+
+            showFlashcard();
+            showSection('flashcardSection');
+        }
+
+        function showFlashcard() {
+            if (flashcardIndex >= flashcardSession.length) {
+                endFlashcards();
+                return;
+            }
+
+            const word = flashcardSession[flashcardIndex];
+            document.getElementById('flashcardWord').textContent = word.word;
+            document.getElementById('flashcardMeaning').textContent = word.meaning;
+            document.getElementById('flashcardExample').textContent = word.example || 'No example';
+            document.getElementById('flashcardLevel').textContent = `Level: ${'★'.repeat(word.level)}${'☆'.repeat(5-word.level)}`;
+            document.getElementById('flashcardCounter').textContent = 
+                `Card ${flashcardIndex + 1}/${flashcardSession.length} | ✓${flashcardCorrect} ✗${flashcardWrong}`;
+
+            document.getElementById('flashcard').classList.remove('flipped');
+        }
+
+        function flipFlashcard() {
+            document.getElementById('flashcard').classList.toggle('flipped');
+        }
+
+        function nextFlashcard() {
+            if (flashcardIndex < flashcardSession.length - 1) {
+                flashcardIndex++;
+                showFlashcard();
+            } else {
+                endFlashcards();
+            }
+        }
+
+        function prevFlashcard() {
+            if (flashcardIndex > 0) {
+                flashcardIndex--;
+                showFlashcard();
+            }
+        }
+
+        function markFlashcardCorrect() {
+            const word = flashcardSession[flashcardIndex];
+            const vocabWord = vocabulary.find(w => w.id === word.id);
+            
+            if (vocabWord) {
+                vocabWord.correctCount++;
+                vocabWord.level = Math.min(5, vocabWord.level + 1);
+                vocabWord.lastPracticed = new Date().toISOString();
+                
+                flashcardCorrect++;
+                
+                wordMistakes = wordMistakes.filter(m => m.id !== word.id);
+            }
+
+            saveData();
+            nextFlashcard();
+        }
+
+        function markFlashcardIncorrect() {
+            const word = flashcardSession[flashcardIndex];
+            const vocabWord = vocabulary.find(w => w.id === word.id);
+            
+            if (vocabWord) {
+                const oldLevel = vocabWord.level;
+                vocabWord.wrongCount++;
+                vocabWord.level = Math.max(1, vocabWord.level - 1);
+                vocabWord.lastPracticed = new Date().toISOString();
+                
+                flashcardWrong++;
+                
+                flashcardMistakeDetails.push({
+                    id: word.id,
+                    word: word.word,
+                    oldLevel: oldLevel,
+                    newLevel: vocabWord.level
+                });
+                
+                if (!wordMistakes.some(m => m.id === word.id)) {
+                    wordMistakes.push({...word});
+                }
+            }
+
+            saveData();
+            nextFlashcard();
+        }
+
+        async function endFlashcards() {
+            const score = flashcardTotal > 0 ? Math.round((flashcardCorrect / flashcardTotal) * 100) : 0;
+            
+            document.getElementById('flashcardScore').textContent = score + '%';
+            document.getElementById('flashcardCorrect').textContent = `${flashcardCorrect} correct`;
+            document.getElementById('flashcardWrong').textContent = `${flashcardWrong} mistakes`;
+            document.getElementById('flashcardTotal').textContent = `${flashcardTotal} total words`;
+            
+            if (flashcardTotal > 0) {
+                practiceHistory.unshift({
+                    date: new Date().toISOString(),
+                    type: 'Flashcards',
+                    correct: flashcardCorrect,
+                    total: flashcardTotal,
+                    score: score
+                });
+                
+                practiceHistory = practiceHistory.slice(0, 50);
+                saveData();
+                updateStats();
+                
+                // Send to Telegram
+                const message = formatFlashcardResults();
+                await sendToTelegram(message, 'flashcard');
+            }
+
+            showSection('flashcardResults');
+        }
+
+        function restartFlashcards() {
+            startFlashcards();
+        }
+
+        // ==================== DICTATION ====================
+        function startDictation() {
+            if (vocabulary.length === 0) {
+                alert('Add some words first!');
+                return;
+            }
+
+            const shuffled = [...vocabulary].sort(() => Math.random() - 0.5);
+            dictationSession = shuffled.slice(0, Math.min(10, vocabulary.length));
+            
+            dictationIndex = 0;
+            dictationCorrect = 0;
+            dictationWrong = 0;
+            dictationTotal = dictationSession.length;
+            dictationMistakeDetails = [];
+            currentDictationWord = dictationSession[0];
+
+            document.getElementById('dictationFeedback').classList.add('hidden');
+            document.getElementById('dictationAnswer').value = '';
+            
+            updateDictationUI();
+            showSection('dictationSection');
+            
+            setTimeout(() => playDictationWord(), 500);
+        }
+
+        function updateDictationUI() {
+            if (dictationSession.length === 0) return;
+            
+            currentDictationWord = dictationSession[dictationIndex];
+            document.getElementById('dictationScore').textContent = 
+                `Score: ${dictationCorrect}/${dictationTotal}`;
+            document.getElementById('dictationProgress').textContent = 
+                `Word ${dictationIndex + 1}/${dictationSession.length}`;
+            document.getElementById('dictationAnswer').value = '';
+            document.getElementById('dictationFeedback').classList.add('hidden');
+        }
+
+        function playDictationWord() {
+            if (currentDictationWord) {
+                speakText(currentDictationWord.word);
+            }
+        }
+
+        function playDictationSpelling() {
+            if (currentDictationWord) {
+                speakSpelling(currentDictationWord.word);
+            }
+        }
+
+        function playDictationSlow() {
+            if (currentDictationWord) {
+                const originalSpeed = voiceSpeed;
+                voiceSpeed = 0.6;
+                speakText(currentDictationWord.word);
+                setTimeout(() => { voiceSpeed = originalSpeed; }, 2000);
+            }
+        }
+
+        function checkDictation() {
+            const userAnswer = document.getElementById('dictationAnswer').value.trim().toLowerCase();
+            const correctWord = currentDictationWord.word.toLowerCase();
+            
+            const isCorrect = (userAnswer === correctWord);
+            
+            const feedback = document.getElementById('dictationFeedback');
+            feedback.textContent = isCorrect ? 
+                `✅ Correct! "${currentDictationWord.word}"` : 
+                `❌ Wrong. The word is "${currentDictationWord.word}"`;
+            feedback.className = `dictation-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+            feedback.classList.remove('hidden');
+            
+            const vocabWord = vocabulary.find(w => w.id === currentDictationWord.id);
+            if (vocabWord) {
+                if (isCorrect) {
+                    vocabWord.correctCount++;
+                    dictationCorrect++;
+                    dictationMistakes = dictationMistakes.filter(m => m.id !== currentDictationWord.id);
+                } else {
+                    vocabWord.wrongCount++;
+                    dictationWrong++;
+                    
+                    dictationMistakeDetails.push({
+                        id: currentDictationWord.id,
+                        word: currentDictationWord.word,
+                        userAnswer: userAnswer
+                    });
+                    
+                    if (!dictationMistakes.some(m => m.id === currentDictationWord.id)) {
+                        dictationMistakes.push({...currentDictationWord});
+                    }
+                }
+            }
+            
+            document.getElementById('dictationScore').textContent = 
+                `Score: ${dictationCorrect}/${dictationTotal}`;
+            
+            saveData();
+            updateStats();
+        }
+
+        function nextDictation() {
+            if (dictationIndex < dictationSession.length - 1) {
+                dictationIndex++;
+                currentDictationWord = dictationSession[dictationIndex];
+                updateDictationUI();
+                playDictationWord();
+            } else {
+                endDictation();
+            }
+        }
+
+        function skipDictation() {
+            const vocabWord = vocabulary.find(w => w.id === currentDictationWord.id);
+            if (vocabWord) {
+                vocabWord.wrongCount++;
+                dictationWrong++;
+                
+                dictationMistakeDetails.push({
+                    id: currentDictationWord.id,
+                    word: currentDictationWord.word,
+                    userAnswer: 'skipped'
+                });
+                
+                if (!dictationMistakes.some(m => m.id === currentDictationWord.id)) {
+                    dictationMistakes.push({...currentDictationWord});
+                }
+            }
+            
+            document.getElementById('dictationScore').textContent = 
+                `Score: ${dictationCorrect}/${dictationTotal}`;
+            
+            saveData();
+            updateStats();
+            nextDictation();
+        }
+
+        function endDictationEarly() {
+            if (confirm('End dictation session?')) {
+                endDictation();
+            }
+        }
+
+        async function endDictation() {
+            const score = dictationTotal > 0 ? Math.round((dictationCorrect / dictationTotal) * 100) : 0;
+            
+            document.getElementById('dictationScoreResult').textContent = score + '%';
+            document.getElementById('dictationCorrectResult').textContent = `${dictationCorrect} correct`;
+            document.getElementById('dictationWrongResult').textContent = `${dictationWrong} mistakes`;
+            document.getElementById('dictationTotalResult').textContent = `${dictationTotal} total words`;
+            
+            if (dictationTotal > 0) {
+                practiceHistory.unshift({
+                    date: new Date().toISOString(),
+                    type: 'Dictation',
+                    correct: dictationCorrect,
+                    total: dictationTotal,
+                    score: score
+                });
+                
+                practiceHistory = practiceHistory.slice(0, 50);
+                saveData();
+                updateStats();
+                
+                // Send to Telegram
+                const message = formatDictationResults();
+                await sendToTelegram(message, 'dictation');
+            }
+            
+            showSection('dictationResults');
+        }
+
+        function restartDictation() {
+            startDictation();
+        }
+
+        // ==================== RESET ====================
         function showResetConfirm() {
             document.getElementById('resetModal').classList.remove('hidden');
         }
-        
-        // Hide reset modal
+
         function hideResetModal() {
             document.getElementById('resetModal').classList.add('hidden');
         }
-        
-        // Reset all data
+
         function resetAllData() {
             vocabulary = [];
-            mistakeFolder = [];
+            wordMistakes = [];
+            dictationMistakes = [];
             practiceHistory = [];
-            categories = new Set(['general']);
-            
             saveData();
-            updateStats();
             hideResetModal();
+            updateStats();
+            alert('All data cleared!');
+        }
+
+        // ==================== INIT ====================
+        window.onload = function() {
+            loadData();
+            initializeVoice();
             
-            alert('All data has been reset.');
-        }
-        
-        // Utility function: shuffle array
-        function shuffleArray(array) {
-            const shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            if (userName) {
+                document.getElementById('login').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                document.getElementById('welcomeMessage').textContent = `Welcome back, ${userName}!`;
+                updateStats();
             }
-            return shuffled;
-        }
-        
-        // Event listeners for category selection
-        document.getElementById('category').addEventListener('change', function() {
-            const customInput = document.getElementById('customCategory');
-            if (this.value === 'custom') {
-                customInput.classList.remove('hidden');
-            } else {
-                customInput.classList.add('hidden');
-            }
-        });
-        
-        // Allow pressing Enter to submit answer
-        document.getElementById('answer').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                submitAnswer();
-            }
-        });
-        
-        // Initialize the app when page loads
-        window.onload = initializeApp;
+        };
     </script>
 </body>
 </html>
